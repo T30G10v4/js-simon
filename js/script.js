@@ -12,26 +12,27 @@ Dopo che sono stati inseriti i 5 numeri, il software dice quanti e quali dei num
 
 1 (*) Estraggo 5 numeri da 1 a 100 diversi tra loro e li pusho in un array;
 2 (*) Li stampo in pagina tramite un h1;
-3 () Faccio partire un timer di 30000 millisecondi (30 secondi);
-4 () Scrivo il timer a schermo
-5 () QUANDO il timer è a 0
-    5.1 () Nascondo i numeri nell'h1
-    5.2 () Termino il timer
-6 () ripeto 5 volte...
-    6.1 () Chiedo all'utente un numero tramite prompt();
-    6.2 () Se il numero è presente nell'array
-        6.2.1 () Incremento la variabile guessed di uno;
-7 () Stampo a video i numeri e i numeri indovinati;
-8 () Fine;
+3 (*) Faccio partire un timer di 30000 millisecondi (30 secondi);
+4 (*) Scrivo il timer a schermo
+5 (*) QUANDO il timer è a 0
+    5.1 (*) Nascondo i numeri nell'h1
+    5.2 (*) Termino il timer
+6 (*) ripeto 5 volte...
+    6.1 (*) Chiedo all'utente un numero tramite prompt();
+    6.2 (*) Se il numero è presente nell'array
+        6.2.1 (*) Incremento la variabile guessed di uno;
+7 (*) Stampo a video i numeri e i numeri indovinati;
+8 (*) Fine;
 
 */
 
 const numbers = getRndNumbers(5, 1, 100);
-const numbersDOM = document.getElementById("numbers");
 
+const numbersDOM = document.getElementById("numbers");
 const timerDOM = document.getElementById("timer");
 
-timer = 30;
+let timer = 30;
+let guessed = 0;
 
 showNumbers(numbersDOM, numbers);
 
@@ -49,6 +50,21 @@ let countdown = setInterval(() => {
 
     }
 }, 1000);
+
+for(let i = 0; i < numbers.length; i++) {
+
+    const result = `inserisci il numero in posizione ${i+1}`;
+    const guess = parseInt(prompt(result)); 
+    if (numbers.includes(guess)) {
+
+        guessed++;
+
+    }
+
+}
+
+const result = `Hai indovinato ${guessed} numeri!`
+numbersDOM.innerHTML = result;
 
 console.log(numbers);
 

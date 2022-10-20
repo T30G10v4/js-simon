@@ -16,7 +16,7 @@ Dopo che sono stati inseriti i 5 numeri, il software dice quanti e quali dei num
 4 (*) Scrivo il timer a schermo
 5 (*) QUANDO il timer è a 0
     5.1 (*) Nascondo i numeri nell'h1
-    5.2 (*) Termino il timer
+    5.2 (*) Termino il timer 
 6 (*) ripeto 5 volte...
     6.1 (*) Chiedo all'utente un numero tramite prompt();
     6.2 (*) Se il numero è presente nell'array
@@ -70,7 +70,9 @@ numbersDOM.innerHTML = result;
 
 console.log(numbers);
 
-}, 5000);
+}, 5000); 
+
+clearInterval(answers);
 
 // FUNCTIONS
 

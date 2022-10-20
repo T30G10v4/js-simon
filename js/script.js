@@ -49,7 +49,9 @@ let countdown = setInterval(() => {
         clearInterval(countdown);
 
     }
-}, 1000);
+}, 100);
+
+let answers = setTimeout(() => {
 
 for(let i = 0; i < numbers.length; i++) {
 
@@ -67,6 +69,8 @@ const result = `Hai indovinato ${guessed} numeri!`
 numbersDOM.innerHTML = result;
 
 console.log(numbers);
+
+}, 5000);
 
 // FUNCTIONS
 
